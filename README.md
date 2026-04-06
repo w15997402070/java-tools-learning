@@ -11,6 +11,13 @@
 - **文档**: https://picocli.info
 - **状态**: ✅ 已完成
 
+### Day 2: Gson - Google JSON处理库
+- **GitHub**: https://github.com/google/gson
+- **星标**: 23k+
+- **版本**: 2.10.1
+- **文档**: [docs/day02-gson.md](docs/day02-gson.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -30,7 +37,17 @@ java-tools-learning/
 │       └── main/
 │           ├── java/com/example/picocli/
 │           └── resources/
+├── gson-demo/                       # Day 2: Gson Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/gson/
+│               ├── GsonBasicDemo.java      # 基础序列化/反序列化
+│               ├── GsonAdvancedDemo.java   # 注解/适配器/命名策略
+│               └── GsonPracticalDemo.java  # 泛型响应/流式API/JSON合并
 └── docs/                           # 学习文档
+    ├── day01-picocli.md
+    └── day02-gson.md
 ```
 
 ## 🚀 如何使用
