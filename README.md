@@ -18,6 +18,20 @@
 - **文档**: [docs/day02-gson.md](docs/day02-gson.md)
 - **状态**: ✅ 已完成
 
+### Day 3: OkHttp - 高性能 HTTP 客户端
+- **GitHub**: https://github.com/square/okhttp
+- **星标**: 45k+
+- **版本**: 4.12.0
+- **文档**: [docs/day03-okhttp.md](docs/day03-okhttp.md)
+- **状态**: ✅ 已完成
+
+### Day 4: Apache POI - Office 文档处理库
+- **GitHub**: https://github.com/apache/poi
+- **星标**: 3.8k+
+- **版本**: 5.2.5
+- **文档**: [docs/day04-poi.md](docs/day04-poi.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -45,9 +59,27 @@ java-tools-learning/
 │               ├── GsonBasicDemo.java      # 基础序列化/反序列化
 │               ├── GsonAdvancedDemo.java   # 注解/适配器/命名策略
 │               └── GsonPracticalDemo.java  # 泛型响应/流式API/JSON合并
+├── okhttp-demo/                     # Day 3: OkHttp Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/okhttp/
+│               ├── OkHttpBasicDemo.java    # 同步GET/带请求头/带参数
+│               ├── OkHttpAdvancedDemo.java # POST/拦截器/异步请求
+│               └── OkHttpPracticalDemo.java # REST API/文件上传/Cookie
+├── poi-demo/                        # Day 4: Apache POI Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/poi/
+│               ├── PoiExcelBasicDemo.java  # Excel基础：创建/读取/多Sheet/样式
+│               ├── PoiExcelAdvancedDemo.java # Excel高级：公式/合并/冻结/日期
+│               └── PoiPracticalDemo.java   # 实战：数据导出/Word文档/大数据流式
 └── docs/                           # 学习文档
     ├── day01-picocli.md
-    └── day02-gson.md
+    ├── day02-gson.md
+    ├── day03-okhttp.md
+    └── day04-poi.md
 ```
 
 ## 🚀 如何使用
