@@ -32,6 +32,20 @@
 - **文档**: [docs/day04-poi.md](docs/day04-poi.md)
 - **状态**: ✅ 已完成
 
+### Day 5: Google Guava - Java 工具类库
+- **GitHub**: https://github.com/google/guava
+- **星标**: 48k+
+- **版本**: 33.1.0-jre
+- **文档**: [docs/day05-guava.md](docs/day05-guava.md)
+- **状态**: ✅ 已完成
+
+### Day 6: ZXing - 二维码/条形码处理库
+- **GitHub**: https://github.com/zxing/zxing
+- **星标**: 32k+
+- **版本**: 3.5.3
+- **文档**: [docs/day06-zxing.md](docs/day06-zxing.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -75,11 +89,29 @@ java-tools-learning/
 │               ├── PoiExcelBasicDemo.java  # Excel基础：创建/读取/多Sheet/样式
 │               ├── PoiExcelAdvancedDemo.java # Excel高级：公式/合并/冻结/日期
 │               └── PoiPracticalDemo.java   # 实战：数据导出/Word文档/大数据流式
+├── guava-demo/                      # Day 5: Google Guava Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/guava/
+│               ├── GuavaCollectionsDemo.java    # 集合工具演示
+│               ├── GuavaStringUtilsDemo.java    # 字符串工具演示
+│               └── GuavaPracticalDemo.java      # 高级工具实战（缓存/限流/事件总线）
+├── zxing-demo/                      # Day 6: ZXing Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/zxing/
+│               ├── ZXingBasicDemo.java          # 基础：生成/解析/条形码
+│               ├── ZXingAdvancedDemo.java       # 高级：彩色码/Logo/批量生成
+│               └── ZXingPracticalDemo.java       # 实战：vCard/WiFi/海报/多码识别
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
     ├── day03-okhttp.md
-    └── day04-poi.md
+    ├── day04-poi.md
+    ├── day05-guava.md
+    └── day06-zxing.md
 ```
 
 ## 🚀 如何使用
