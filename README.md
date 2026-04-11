@@ -46,6 +46,13 @@
 - **文档**: [docs/day06-zxing.md](docs/day06-zxing.md)
 - **状态**: ✅ 已完成
 
+### Day 7: Quartz Scheduler - 定时任务调度框架
+- **GitHub**: https://github.com/quartz-scheduler/quartz
+- **星标**: 5.9k+
+- **版本**: 2.3.2
+- **文档**: [docs/day07-quartz.md](docs/day07-quartz.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -105,13 +112,22 @@ java-tools-learning/
 │               ├── ZXingBasicDemo.java          # 基础：生成/解析/条形码
 │               ├── ZXingAdvancedDemo.java       # 高级：彩色码/Logo/批量生成
 │               └── ZXingPracticalDemo.java       # 实战：vCard/WiFi/海报/多码识别
+├── quartz-demo/                     # Day 7: Quartz Scheduler Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/quartz/
+│               ├── QuartzBasicDemo.java         # 基础：HelloJob/SimpleScheduler/JobDataMap
+│               ├── QuartzAdvancedDemo.java      # 高级：CronTrigger/监听器/持久化计数器
+│               └── QuartzPracticalDemo.java     # 实战：订单超时/报表调度/动态任务/任务链
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
     ├── day03-okhttp.md
     ├── day04-poi.md
     ├── day05-guava.md
-    └── day06-zxing.md
+    ├── day06-zxing.md
+    └── day07-quartz.md
 ```
 
 ## 🚀 如何使用
