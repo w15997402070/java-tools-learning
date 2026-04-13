@@ -60,6 +60,13 @@
 - **文档**: [docs/day08-hibernate-validator.md](docs/day08-hibernate-validator.md)
 - **状态**: ✅ 已完成
 
+### Day 9: Thumbnailator - Java 图片处理库
+- **GitHub**: https://github.com/coobird/thumbnailator
+- **星标**: 5.0k+
+- **版本**: 0.4.20
+- **文档**: [docs/day09-thumbnailator.md](docs/day09-thumbnailator.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -135,6 +142,14 @@ java-tools-learning/
 │               ├── HibernateValidatorBasicDemo.java     # 基础：内置注解/@Valid嵌套验证
 │               ├── HibernateValidatorAdvancedDemo.java  # 高级：自定义注解/分组/跨字段/集合元素
 │               └── HibernateValidatorPracticalDemo.java # 实战：电商下单验证/快速失败/工具类封装
+├── thumbnailator-demo/              # Day 9: Thumbnailator Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/thumbnailator/
+│               ├── ThumbnailatorBasicDemo.java      # 基础：缩略图/比例缩放/旋转/裁剪/翻转
+│               ├── ThumbnailatorAdvancedDemo.java   # 高级：水印/格式转换/流式操作/Canvas填充
+│               └── ThumbnailatorPracticalDemo.java  # 实战：电商批量处理/头像多尺寸/响应式图片
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -143,7 +158,8 @@ java-tools-learning/
     ├── day05-guava.md
     ├── day06-zxing.md
     ├── day07-quartz.md
-    └── day08-hibernate-validator.md
+    ├── day08-hibernate-validator.md
+    └── day09-thumbnailator.md
 ```
 
 ## 🚀 如何使用
