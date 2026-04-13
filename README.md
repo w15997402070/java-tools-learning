@@ -53,6 +53,13 @@
 - **文档**: [docs/day07-quartz.md](docs/day07-quartz.md)
 - **状态**: ✅ 已完成
 
+### Day 8: Hibernate Validator - Bean Validation 数据验证框架
+- **GitHub**: https://github.com/hibernate/hibernate-validator
+- **星标**: 3.5k+
+- **版本**: 6.2.5.Final
+- **文档**: [docs/day08-hibernate-validator.md](docs/day08-hibernate-validator.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -120,6 +127,14 @@ java-tools-learning/
 │               ├── QuartzBasicDemo.java         # 基础：HelloJob/SimpleScheduler/JobDataMap
 │               ├── QuartzAdvancedDemo.java      # 高级：CronTrigger/监听器/持久化计数器
 │               └── QuartzPracticalDemo.java     # 实战：订单超时/报表调度/动态任务/任务链
+├── hibernate-validator-demo/        # Day 8: Hibernate Validator Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/validator/
+│               ├── HibernateValidatorBasicDemo.java     # 基础：内置注解/@Valid嵌套验证
+│               ├── HibernateValidatorAdvancedDemo.java  # 高级：自定义注解/分组/跨字段/集合元素
+│               └── HibernateValidatorPracticalDemo.java # 实战：电商下单验证/快速失败/工具类封装
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -127,7 +142,8 @@ java-tools-learning/
     ├── day04-poi.md
     ├── day05-guava.md
     ├── day06-zxing.md
-    └── day07-quartz.md
+    ├── day07-quartz.md
+    └── day08-hibernate-validator.md
 ```
 
 ## 🚀 如何使用
