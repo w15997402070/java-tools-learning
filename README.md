@@ -67,6 +67,13 @@
 - **文档**: [docs/day09-thumbnailator.md](docs/day09-thumbnailator.md)
 - **状态**: ✅ 已完成
 
+### Day 10: Apache PDFBox - PDF 处理库
+- **GitHub**: https://github.com/apache/pdfbox
+- **星标**: 2.6k+
+- **版本**: 2.0.31 (Java 8 兼容)
+- **文档**: [docs/day10-pdfbox.md](docs/day10-pdfbox.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -150,6 +157,14 @@ java-tools-learning/
 │               ├── ThumbnailatorBasicDemo.java      # 基础：缩略图/比例缩放/旋转/裁剪/翻转
 │               ├── ThumbnailatorAdvancedDemo.java   # 高级：水印/格式转换/流式操作/Canvas填充
 │               └── ThumbnailatorPracticalDemo.java  # 实战：电商批量处理/头像多尺寸/响应式图片
+├── pdfbox-demo/                     # Day 10: Apache PDFBox Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/pdfbox/
+│               ├── PdfBoxBasicDemo.java             # 基础：创建PDF/文本读取/多页PDF
+│               ├── PdfBoxAdvancedDemo.java          # 高级：合并/拆分/元数据/文字旋转
+│               └── PdfBoxPracticalDemo.java         # 实战：水印/表格绘制/批量提取/业务报告
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -159,7 +174,8 @@ java-tools-learning/
     ├── day06-zxing.md
     ├── day07-quartz.md
     ├── day08-hibernate-validator.md
-    └── day09-thumbnailator.md
+    ├── day09-thumbnailator.md
+    └── day10-pdfbox.md
 ```
 
 ## 🚀 如何使用
