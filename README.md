@@ -74,6 +74,13 @@
 - **文档**: [docs/day10-pdfbox.md](docs/day10-pdfbox.md)
 - **状态**: ✅ 已完成
 
+### Day 11: EasyExcel - 阿里巴巴高性能 Excel 读写库
+- **GitHub**: https://github.com/alibaba/easyexcel
+- **星标**: 32k+
+- **版本**: 3.3.4
+- **文档**: [docs/day11-easyexcel.md](docs/day11-easyexcel.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -165,6 +172,14 @@ java-tools-learning/
 │               ├── PdfBoxBasicDemo.java             # 基础：创建PDF/文本读取/多页PDF
 │               ├── PdfBoxAdvancedDemo.java          # 高级：合并/拆分/元数据/文字旋转
 │               └── PdfBoxPracticalDemo.java         # 实战：水印/表格绘制/批量提取/业务报告
+├── easyexcel-demo/                  # Day 11: EasyExcel Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/easyexcel/
+│               ├── EasyExcelBasicDemo.java          # 基础：写/读/多Sheet（注解模型）
+│               ├── EasyExcelAdvancedDemo.java       # 高级：自定义样式/动态表头/冻结+筛选
+│               └── EasyExcelPracticalDemo.java      # 实战：50000行大文件/分批导入/按部门分Sheet
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -175,7 +190,8 @@ java-tools-learning/
     ├── day07-quartz.md
     ├── day08-hibernate-validator.md
     ├── day09-thumbnailator.md
-    └── day10-pdfbox.md
+    ├── day10-pdfbox.md
+    └── day11-easyexcel.md
 ```
 
 ## 🚀 如何使用
