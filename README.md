@@ -81,6 +81,20 @@
 - **文档**: [docs/day11-easyexcel.md](docs/day11-easyexcel.md)
 - **状态**: ✅ 已完成
 
+### Day 13: Fastjson2 - 阿里巴巴高性能 JSON 库
+- **GitHub**: https://github.com/alibaba/fastjson2
+- **星标**: 4.5k+
+- **版本**: 2.0.48
+- **文档**: [docs/day13-fastjson2.md](docs/day13-fastjson2.md)
+- **状态**: ✅ 已完成
+
+### Day 12: Lombok - Java 代码生成工具
+- **GitHub**: https://github.com/projectlombok/lombok
+- **星标**: 24k+
+- **版本**: 1.18.30
+- **文档**: [docs/day12-lombok.md](docs/day12-lombok.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -180,6 +194,30 @@ java-tools-learning/
 │               ├── EasyExcelBasicDemo.java          # 基础：写/读/多Sheet（注解模型）
 │               ├── EasyExcelAdvancedDemo.java       # 高级：自定义样式/动态表头/冻结+筛选
 │               └── EasyExcelPracticalDemo.java      # 实战：50000行大文件/分批导入/按部门分Sheet
+├── fastjson2-demo/                 # Day 13: Fastjson2 Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/fastjson2/
+│               ├── FastJson2BasicDemo.java       # 基础：序列化/反序列化/集合/JSONPath
+│               ├── FastJson2AdvancedDemo.java    # 高级：注解/枚举/循环引用/Feature配置
+│               └── FastJson2PracticalDemo.java   # 实战：泛型响应/字段过滤/大文件/常见坑
+├── fastjson2-demo/                 # Day 13: Fastjson2 Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/fastjson2/
+│               ├── FastJson2BasicDemo.java       # 基础：序列化/反序列化/集合/JSONPath
+│               ├── FastJson2AdvancedDemo.java    # 高级：注解/枚举/循环引用/Feature配置
+│               └── FastJson2PracticalDemo.java   # 实战：泛型响应/字段过滤/大文件/常见坑
+├── lombok-demo/                    # Day 12: Lombok Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/lombok/
+│               ├── LombokBasicDemo.java              # 基础：@Data/@Getter/@Setter/构造函数
+│               ├── LombokAdvancedDemo.java           # 高级：@Builder/@Value/@Log/@Delegate
+│               └── LombokPracticalDemo.java          # 实战：DTO/统一响应/配置/异常/分页
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -191,7 +229,9 @@ java-tools-learning/
     ├── day08-hibernate-validator.md
     ├── day09-thumbnailator.md
     ├── day10-pdfbox.md
-    └── day11-easyexcel.md
+    ├── day11-easyexcel.md
+    ├── day12-lombok.md
+    └── day13-fastjson2.md
 ```
 
 ## 🚀 如何使用
