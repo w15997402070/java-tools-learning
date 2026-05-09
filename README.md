@@ -95,6 +95,27 @@
 - **文档**: [docs/day12-lombok.md](docs/day12-lombok.md)
 - **状态**: ✅ 已完成
 
+### Day 14: Apache Commons Lang3 - Java 最常用工具类库
+- **GitHub**: https://github.com/apache/commons-lang
+- **星标**: 3.5k+（Apache 官方维护，实际使用量极大）
+- **版本**: 3.14.0
+- **文档**: [docs/day14-commons-lang3.md](docs/day14-commons-lang3.md)
+- **状态**: ✅ 已完成
+
+### Day 15: JUnit 5 - Java 标准测试框架
+- **GitHub**: https://github.com/junit-team/junit5
+- **星标**: 13k+
+- **版本**: 5.10.2
+- **文档**: [docs/day15-junit5.md](docs/day15-junit5.md)
+- **状态**: ✅ 已完成
+
+### Day 16: MapStruct - Java Bean 映射框架
+- **GitHub**: https://github.com/mapstruct/mapstruct
+- **星标**: 7.2k+
+- **版本**: 1.5.5.Final
+- **文档**: [docs/day16-mapstruct.md](docs/day16-mapstruct.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -218,6 +239,33 @@ java-tools-learning/
 │               ├── LombokBasicDemo.java              # 基础：@Data/@Getter/@Setter/构造函数
 │               ├── LombokAdvancedDemo.java           # 高级：@Builder/@Value/@Log/@Delegate
 │               └── LombokPracticalDemo.java          # 实战：DTO/统一响应/配置/异常/分页
+├── commons-lang3-demo/             # Day 14: Apache Commons Lang3 Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/commonslang3/
+│               ├── CommonsLang3BasicDemo.java        # 基础：StringUtils/NumberUtils/ArrayUtils/BooleanUtils/CharUtils
+│               ├── CommonsLang3AdvancedDemo.java     # 进阶：Builder/Pair/Triple/反射/StopWatch/DateUtils/ExceptionUtils
+│               └── CommonsLang3PracticalDemo.java    # 实战：用户校验/订单号生成/配置读取/接口监控/日期范围/异常日志
+├── junit5-demo/                    # Day 15: JUnit 5 Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/junit5/
+│               ├── JUnit5BasicDemo.java           # 基础：生命周期注解/常用断言/嵌套测试/假设跳过/TestInfo
+│               ├── JUnit5AdvancedDemo.java          # 进阶：参数化测试/动态测试/条件执行/标签/重复测试/自定义注解
+│               └── JUnit5PracticalDemo.java         # 实战：User模型/Order状态机/UserService/自定义断言
+├── mapstruct-demo/                 # Day 16: MapStruct Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/mapstruct/
+│               ├── entity/                          # 实体类（User/Order/Address）
+│               ├── dto/                             # DTO类（UserDTO/OrderDTO/DeliveryInfoDTO）
+│               ├── mapper/                          # Mapper接口（UserMapper/OrderMapper/DeliveryInfoMapper）
+│               ├── MapStructBasicDemo.java          # 基础：字段映射/忽略/反向/批量/@MappingTarget
+│               ├── MapStructAdvancedDemo.java       # 进阶：嵌套展平/单位转换/状态码转换/null处理
+│               └── MapStructPracticalDemo.java      # 实战：多源合并/地址拼接/批量处理/Spring集成指南
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -232,6 +280,9 @@ java-tools-learning/
     ├── day11-easyexcel.md
     ├── day12-lombok.md
     └── day13-fastjson2.md
+    └── day14-commons-lang3.md
+    └── day15-junit5.md
+    └── day16-mapstruct.md
 ```
 
 ## 🚀 如何使用
