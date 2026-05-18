@@ -116,6 +116,13 @@
 - **文档**: [docs/day16-mapstruct.md](docs/day16-mapstruct.md)
 - **状态**: ✅ 已完成
 
+### Day 17: Retrofit 2 - 类型安全 HTTP 客户端库
+- **GitHub**: https://github.com/square/retrofit
+- **星标**: 42k+
+- **版本**: 2.11.0
+- **文档**: [docs/day17-retrofit.md](docs/day17-retrofit.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -266,6 +273,14 @@ java-tools-learning/
 │               ├── MapStructBasicDemo.java          # 基础：字段映射/忽略/反向/批量/@MappingTarget
 │               ├── MapStructAdvancedDemo.java       # 进阶：嵌套展平/单位转换/状态码转换/null处理
 │               └── MapStructPracticalDemo.java      # 实战：多源合并/地址拼接/批量处理/Spring集成指南
+├── retrofit-demo/                  # Day 17: Retrofit 2 Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/retrofit/
+│               ├── RetrofitBasicDemo.java           # 基础：GET/POST/PUT/DELETE/@Path/@Query/@Body/同步/异步
+│               ├── RetrofitAdvancedDemo.java        # 进阶：自定义OkHttpClient/日志拦截器/@Headers/Call.clone()/多BaseUrl
+│               └── RetrofitPracticalDemo.java       # 实战：单例工厂/请求取消/错误处理/并发聚合/RxJava2/Spring集成指引
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -283,6 +298,7 @@ java-tools-learning/
     └── day14-commons-lang3.md
     └── day15-junit5.md
     └── day16-mapstruct.md
+    └── day17-retrofit.md
 ```
 
 ## 🚀 如何使用
