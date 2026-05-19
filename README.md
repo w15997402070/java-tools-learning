@@ -123,6 +123,13 @@
 - **文档**: [docs/day17-retrofit.md](docs/day17-retrofit.md)
 - **状态**: ✅ 已完成
 
+### Day 18: Caffeine - 高性能本地缓存库
+- **GitHub**: https://github.com/ben-manes/caffeine
+- **星标**: 16k+
+- **版本**: 2.9.3（Java 8 兼容）
+- **文档**: [docs/day18-caffeine.md](docs/day18-caffeine.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -281,6 +288,14 @@ java-tools-learning/
 │               ├── RetrofitBasicDemo.java           # 基础：GET/POST/PUT/DELETE/@Path/@Query/@Body/同步/异步
 │               ├── RetrofitAdvancedDemo.java        # 进阶：自定义OkHttpClient/日志拦截器/@Headers/Call.clone()/多BaseUrl
 │               └── RetrofitPracticalDemo.java       # 实战：单例工厂/请求取消/错误处理/并发聚合/RxJava2/Spring集成指引
+├── caffeine-demo/                  # Day 18: Caffeine Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/caffeine/
+│               ├── CaffeineBasicDemo.java           # 基础：手动缓存/LoadingCache/过期策略/容量淘汰/缓存统计
+│               ├── CaffeineAdvancedDemo.java        # 进阶：AsyncLoadingCache/移除监听器/自定义Expiry/refreshAfterWrite/引用缓存
+│               └── CaffeinePracticalDemo.java       # 实战：多级缓存/穿透防护/雪崩防护/并发计数器/Spring集成/性能对比
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -299,6 +314,7 @@ java-tools-learning/
     └── day15-junit5.md
     └── day16-mapstruct.md
     └── day17-retrofit.md
+    └── day18-caffeine.md
 ```
 
 ## 🚀 如何使用
