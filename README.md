@@ -130,6 +130,13 @@
 - **文档**: [docs/day18-caffeine.md](docs/day18-caffeine.md)
 - **状态**: ✅ 已完成
 
+### Day 19: Resilience4j - 微服务弹性框架
+- **GitHub**: https://github.com/resilience4j/resilience4j
+- **星标**: 9.5k+
+- **版本**: 1.7.1（Java 8 兼容，Hystrix 官方推荐替代）
+- **文档**: [docs/day19-resilience4j.md](docs/day19-resilience4j.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -296,6 +303,14 @@ java-tools-learning/
 │               ├── CaffeineBasicDemo.java           # 基础：手动缓存/LoadingCache/过期策略/容量淘汰/缓存统计
 │               ├── CaffeineAdvancedDemo.java        # 进阶：AsyncLoadingCache/移除监听器/自定义Expiry/refreshAfterWrite/引用缓存
 │               └── CaffeinePracticalDemo.java       # 实战：多级缓存/穿透防护/雪崩防护/并发计数器/Spring集成/性能对比
+├── resilience4j-demo/              # Day 19: Resilience4j Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/resilience4j/
+│               ├── Resilience4jBasicDemo.java       # 基础：CircuitBreaker三态/RateLimiter限流/Retry重试/指数退避
+│               ├── Resilience4jAdvancedDemo.java    # 进阶：Bulkhead舱壁/Decorator链/Fallback降级/慢调用检测
+│               └── Resilience4jPracticalDemo.java   # 实战：电商下单保护/短信防刷/微服务调用链/雪崩防护/Spring集成
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -315,6 +330,7 @@ java-tools-learning/
     └── day16-mapstruct.md
     └── day17-retrofit.md
     └── day18-caffeine.md
+    └── day19-resilience4j.md
 ```
 
 ## 🚀 如何使用
