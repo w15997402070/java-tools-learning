@@ -137,6 +137,13 @@
 - **文档**: [docs/day19-resilience4j.md](docs/day19-resilience4j.md)
 - **状态**: ✅ 已完成
 
+### Day 20: Byte Buddy - Java 运行时字节码生成与操作库
+- **GitHub**: https://bytebuddy.net / https://github.com/raphael/byte-buddy
+- **星标**: 11k+
+- **版本**: 1.14.18（Java 8 兼容）
+- **文档**: [docs/day20-bytebuddy.md](docs/day20-bytebuddy.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -311,6 +318,14 @@ java-tools-learning/
 │               ├── Resilience4jBasicDemo.java       # 基础：CircuitBreaker三态/RateLimiter限流/Retry重试/指数退避
 │               ├── Resilience4jAdvancedDemo.java    # 进阶：Bulkhead舱壁/Decorator链/Fallback降级/慢调用检测
 │               └── Resilience4jPracticalDemo.java   # 实战：电商下单保护/短信防刷/微服务调用链/雪崩防护/Spring集成
+├── bytebuddy-demo/                 # Day 20: Byte Buddy Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/bytebuddy/
+│               ├── ByteBuddyBasicDemo.java          # 基础：动态接口实现/FixedValue Mock/AOP日志拦截
+│               ├── ByteBuddyAdvancedDemo.java       # 进阶：动态字段/动态注解/条件分发/rebase
+│               └── ByteBuddyPracticalDemo.java      # 实战：性能监控AOP/动态路由工厂/Mock工厂
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -331,6 +346,7 @@ java-tools-learning/
     └── day17-retrofit.md
     └── day18-caffeine.md
     └── day19-resilience4j.md
+    └── day20-bytebuddy.md
 ```
 
 ## 🚀 如何使用
