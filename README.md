@@ -144,6 +144,27 @@
 - **文档**: [docs/day20-bytebuddy.md](docs/day20-bytebuddy.md)
 - **状态**: ✅ 已完成
 
+### Day 21: Apache HttpClient 5 - 现代企业级 HTTP 客户端
+- **GitHub**: https://github.com/apache/httpcomponents-client
+- **官方文档**: https://hc.apache.org/httpcomponents-client-5.3.x/
+- **版本**: 5.3.1（Java 8 兼容，Spring Boot 3 官方集成）
+- **文档**: [docs/day21-httpclient5.md](docs/day21-httpclient5.md)
+- **状态**: ✅ 已完成
+
+### Day 22: Micrometer - JVM 微服务指标监控库
+- **GitHub**: https://github.com/micrometer-metrics/micrometer
+- **星标**: 4.2k+
+- **版本**: 1.9.17（Java 8 兼容，Spring Boot 2.7.x 内置，Prometheus/JMX/Grafana）
+- **文档**: [docs/day22-micrometer.md](docs/day22-micrometer.md)
+- **状态**: ✅ 已完成
+
+### Day 23: Eclipse Vert.x - 事件驱动 / 响应式 JVM 框架
+- **GitHub**: https://github.com/eclipse-vertx/vert.x
+- **星标**: 14k+
+- **版本**: 3.9.16（Java 8 兼容）
+- **文档**: [docs/day23-vertx.md](docs/day23-vertx.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -326,6 +347,30 @@ java-tools-learning/
 │               ├── ByteBuddyBasicDemo.java          # 基础：动态接口实现/FixedValue Mock/AOP日志拦截
 │               ├── ByteBuddyAdvancedDemo.java       # 进阶：动态字段/动态注解/条件分发/rebase
 │               └── ByteBuddyPracticalDemo.java      # 实战：性能监控AOP/动态路由工厂/Mock工厂
+├── httpclient5-demo/               # Day 21: Apache HttpClient 5 Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/httpclient5/
+│               ├── HttpClient5BasicDemo.java        # 基础：GET/POST/PUT/DELETE/请求头/响应头
+│               ├── HttpClient5AdvancedDemo.java     # 进阶：连接池/超时/拦截器/Cookie/Basic认证
+│               └── HttpClient5PracticalDemo.java    # 实战：表单提交/文件上传/并发批量/重试机制/Spring集成
+├── micrometer-demo/                # Day 22: Micrometer Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/micrometer/
+│               ├── MicrometerBasicDemo.java         # 基础：Counter/Gauge/Timer/DistributionSummary
+│               ├── MicrometerAdvancedDemo.java      # 进阶：Composite/Prometheus/JMX/MeterFilter/FunctionTimer
+│               └── MicrometerPracticalDemo.java     # 实战：电商订单全链路指标/HTTP端点/Spring集成指南
+├── vertx-demo/                     # Day 23: Vert.x Core Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/vertx/
+│               ├── VertxBasicDemo.java              # 基础：Verticle/EventBus send-reply/publish-subscribe/Worker/Timer
+│               ├── VertxAdvancedDemo.java           # 进阶：Future/Promise/CompositeFuture/DeliveryOptions/executeBlocking
+│               └── VertxPracticalDemo.java          # 实战：vertx-web RESTful API/EventBus分层/Metrics广播/Spring集成
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -347,6 +392,9 @@ java-tools-learning/
     └── day18-caffeine.md
     └── day19-resilience4j.md
     └── day20-bytebuddy.md
+    └── day21-httpclient5.md
+    └── day22-micrometer.md
+    └── day23-vertx.md
 ```
 
 ## 🚀 如何使用
