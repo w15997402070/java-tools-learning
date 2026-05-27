@@ -1,0 +1,35 @@
+{
+  "type": "record",
+  "name": "User",
+  "namespace": "com.example.avro.generated",
+  "doc": "用户信息Schema - 用于演示Avro基础序列化",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "用户唯一ID"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "用户姓名"
+    },
+    {
+      "name": "email",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "用户邮箱（可选）"
+    },
+    {
+      "name": "age",
+      "type": "int",
+      "doc": "用户年龄"
+    },
+    {
+      "name": "active",
+      "type": "boolean",
+      "default": true,
+      "doc": "账号是否激活"
+    }
+  ]
+}

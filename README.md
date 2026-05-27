@@ -165,6 +165,14 @@
 - **文档**: [docs/day23-vertx.md](docs/day23-vertx.md)
 - **状态**: ✅ 已完成
 
+### Day 24: Apache Avro - 数据序列化框架（Kafka 消息格式标准）
+- **GitHub**: https://github.com/apache/avro
+- **官网**: https://avro.apache.org
+- **星标**: 2.8k+（Apache 官方，Kafka 生态首选）
+- **版本**: 1.11.3（Java 8 兼容）
+- **文档**: [docs/day24-avro.md](docs/day24-avro.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -371,6 +379,17 @@ java-tools-learning/
 │               ├── VertxBasicDemo.java              # 基础：Verticle/EventBus send-reply/publish-subscribe/Worker/Timer
 │               ├── VertxAdvancedDemo.java           # 进阶：Future/Promise/CompositeFuture/DeliveryOptions/executeBlocking
 │               └── VertxPracticalDemo.java          # 实战：vertx-web RESTful API/EventBus分层/Metrics广播/Spring集成
+├── avro-demo/                      # Day 24: Apache Avro Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           ├── java/com/example/avro/
+│           │   ├── AvroBasicDemo.java               # 基础：Generic API/Schema定义/序列化/反序列化/SchemaBuilder
+│           │   ├── AvroAdvancedDemo.java            # 进阶：DataFile读写/Schema演化/Union+Map/压缩编解码/性能对比
+│           │   └── AvroPracticalDemo.java           # 实战：Kafka消息Envelope设计/ETL数据管道/Spring Boot集成指南
+│           └── resources/avro/
+│               ├── User.avsc                        # 用户Schema定义
+│               └── Order.avsc                       # 订单Schema定义（含枚举/数组/嵌套Record）
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -395,6 +414,7 @@ java-tools-learning/
     └── day21-httpclient5.md
     └── day22-micrometer.md
     └── day23-vertx.md
+    └── day24-avro.md
 ```
 
 ## 🚀 如何使用
