@@ -173,6 +173,14 @@
 - **文档**: [docs/day24-avro.md](docs/day24-avro.md)
 - **状态**: ✅ 已完成
 
+### Day 25: Jackson - Spring Boot 默认 JSON 引擎（多格式数据绑定库）
+- **GitHub**: https://github.com/FasterXML/jackson
+- **官网**: https://github.com/FasterXML/jackson-docs
+- **星标**: 8.6k+（Spring Boot 内置，Java 生态中使用最广泛的 JSON 库）
+- **版本**: 2.17.2（Java 8 兼容，支持 JSON/XML/YAML/CSV）
+- **文档**: [docs/day25-jackson.md](docs/day25-jackson.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -390,6 +398,14 @@ java-tools-learning/
 │           └── resources/avro/
 │               ├── User.avsc                        # 用户Schema定义
 │               └── Order.avsc                       # 订单Schema定义（含枚举/数组/嵌套Record）
+├── jackson-demo/                   # Day 25: Jackson Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/jackson/
+│               ├── JacksonBasicDemo.java            # 基础：序列化/反序列化/常用注解/泛型集合/日期时间/树模型
+│               ├── JacksonAdvancedDemo.java         # 进阶：自定义序列化器/多态类型/枚举/XML/YAML/Merge
+│               └── JacksonPracticalDemo.java        # 实战：统一响应体/脱敏/流式API/CSV/动态JSON/Spring集成
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -415,6 +431,7 @@ java-tools-learning/
     └── day22-micrometer.md
     └── day23-vertx.md
     └── day24-avro.md
+    └── day25-jackson.md
 ```
 
 ## 🚀 如何使用
