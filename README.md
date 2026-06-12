@@ -181,6 +181,22 @@
 - **文档**: [docs/day25-jackson.md](docs/day25-jackson.md)
 - **状态**: ✅ 已完成
 
+### Day 26: Apache Commons IO - 文件/IO 操作工具库
+- **GitHub**: https://github.com/apache/commons-io
+- **官网**: https://commons.apache.org/proper/commons-io/
+- **星标**: 1.1k+（Apache 官方，Maven Central 月下载量超 5 亿次）
+- **版本**: 2.15.1（Java 8 兼容）
+- **文档**: [docs/day26-commons-io.md](docs/day26-commons-io.md)
+- **状态**: ✅ 已完成
+
+### Day 27: Hutool - 国产Java超实用工具类库
+- **GitHub**: https://github.com/dromara/hutool
+- **官网**: https://www.hutool.cn
+- **星标**: 29k+
+- **版本**: 5.8.25（Java 8 兼容，6.x 需 Java 11+）
+- **文档**: [docs/day27-hutool.md](docs/day27-hutool.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -406,6 +422,22 @@ java-tools-learning/
 │               ├── JacksonBasicDemo.java            # 基础：序列化/反序列化/常用注解/泛型集合/日期时间/树模型
 │               ├── JacksonAdvancedDemo.java         # 进阶：自定义序列化器/多态类型/枚举/XML/YAML/Merge
 │               └── JacksonPracticalDemo.java        # 实战：统一响应体/脱敏/流式API/CSV/动态JSON/Spring集成
+├── commons-io-demo/                # Day 26: Apache Commons IO Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/commonsio/
+│               ├── CommonsIOBasicDemo.java          # 基础：FileUtils读写/FilenameUtils路径/IOUtils流/LineIterator大文件
+│               ├── CommonsIOAdvancedDemo.java       # 进阶：FileFilter组合/Comparator排序/ReversedLinesReader/BoundedInputStream/TeeOutputStream/FileAlterationMonitor
+│               └── CommonsIOPracticalDemo.java      # 实战：配置文件工具/多租户文件归档/日志文件清理
+├── hutool-demo/                    # Day 27: Hutool Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/hutool/
+│               ├── HutoolBasicDemo.java             # 基础：日期/字符串/集合/类型转换/唯一ID/文件操作
+│               ├── HutoolAdvancedDemo.java          # 进阶：加密/AES/验证码/HTTP客户端/定时任务/压缩解压
+│               └── HutoolPracticalDemo.java         # 实战：订单生成/JSON/Bean拷贝/缓存/邮件/校验/随机
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -432,6 +464,8 @@ java-tools-learning/
     └── day23-vertx.md
     └── day24-avro.md
     └── day25-jackson.md
+    └── day26-commons-io.md
+    └── day27-hutool.md
 ```
 
 ## 🚀 如何使用
