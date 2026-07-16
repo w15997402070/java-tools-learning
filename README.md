@@ -197,6 +197,27 @@
 - **文档**: [docs/day27-hutool.md](docs/day27-hutool.md)
 - **状态**: ✅ 已完成
 
+### Day 28: Jsoup — Java HTML 解析器
+- **GitHub**: https://github.com/jhy/jsoup
+- **星标**: 11k+
+- **版本**: 1.17.2（Java 8 兼容）
+- **文档**: [docs/day28-jsoup.md](docs/day28-jsoup.md)
+- **状态**: ✅ 已完成
+
+### Day 28: SLF4J + Logback — Java 日志框架
+- **GitHub**: https://github.com/qos-ch/logback
+- **星标**: 3k+（Spring Boot 默认日志框架，实际使用量极大）
+- **版本**: 1.2.13 / 1.3.14（1.2.x 兼容 Java 8）
+- **文档**: [docs/day28-logback.md](docs/day28-logback.md)
+- **状态**: ✅ 已完成
+
+### Day 29: JJWT (Java JWT) — JSON Web Token 认证库
+- **GitHub**: https://github.com/jwtk/jjwt
+- **星标**: 10k+
+- **版本**: 0.12.5（Java 8 兼容）
+- **文档**: [docs/day29-jjwt.md](docs/day29-jjwt.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -438,6 +459,32 @@ java-tools-learning/
 │               ├── HutoolBasicDemo.java             # 基础：日期/字符串/集合/类型转换/唯一ID/文件操作
 │               ├── HutoolAdvancedDemo.java          # 进阶：加密/AES/验证码/HTTP客户端/定时任务/压缩解压
 │               └── HutoolPracticalDemo.java         # 实战：订单生成/JSON/Bean拷贝/缓存/邮件/校验/随机
+├── jsoup-demo/                     # Day 28: Jsoup Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/jsoup/
+│               ├── JsoupBasicDemo.java              # 基础：HTML解析/CSS选择器/DOM遍历/属性操作
+│               ├── JsoupAdvancedDemo.java           # 进阶：网页爬取/表单提交/Session/代理/自定义Whitelist
+│               └── JsoupPracticalDemo.java          # 实战：新闻聚合/价格监控/HTML清洗/Spring集成
+├── logback-demo/                   # Day 28: Logback Demo
+│   ├── pom.xml
+│   └── src/
+│       ├── main/
+│       │   ├── java/com/example/logback/
+│       │   │   ├── LogbackBasicDemo.java            # 基础：Logger/Level/占位符/MDC/SLF4J API
+│       │   │   ├── LogbackAdvancedDemo.java         # 进阶：AsyncAppender/SiftingAppender/Filter/自定义Converter
+│       │   │   └── LogbackPracticalDemo.java        # 实战：分级输出/按天归档/邮件告警/链路追踪/Spring Boot配置
+│       │   └── resources/
+│       │       └── logback.xml                       # Logback 完整配置文件
+├── jjwt-demo/                      # Day 29: JJWT Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/jjwt/
+│               ├── JjwtBasicDemo.java               # 基础：Token创建/解析/自定义Claims/过期处理
+│               ├── JjwtAdvancedDemo.java            # 进阶：RS256非对称加密/Refresh Token/安全工具/常见坑
+│               └── JjwtPracticalDemo.java           # 实战：用户认证系统/登录/拦截器/角色鉴权/黑名单/Spring Boot集成
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -466,6 +513,9 @@ java-tools-learning/
     └── day25-jackson.md
     └── day26-commons-io.md
     └── day27-hutool.md
+    └── day28-jsoup.md
+    └── day28-logback.md
+    └── day29-jjwt.md
 ```
 
 ## 🚀 如何使用
