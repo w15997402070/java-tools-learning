@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>mug-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>mug-demo</name>
+    <description>Day 30 - Google Mug: Java 8 字符串处理与双向流工具库 Demo</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <mug.version>10.6</mug.version>
+    </properties>
+
+    <dependencies>
+        <!-- Google Mug 核心：0 依赖，字符串处理 + BiStream + StringFormat -->
+        <dependency>
+            <groupId>com.google.mug</groupId>
+            <artifactId>mug</artifactId>
+            <version>${mug.version}</version>
+        </dependency>
+
+        <!-- mug-guava：基于 Guava 的扩展（BinarySearch 等），可选 -->
+        <dependency>
+            <groupId>com.google.mug</groupId>
+            <artifactId>mug-guava</artifactId>
+            <version>${mug.version}</version>
+        </dependency>
+
+        <!-- JUnit 5（仅用于演示测试，实际构建跳过测试） -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Exec Plugin：方便直接运行 Demo 的 main 方法 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.example.mug.MugBasicDemo</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

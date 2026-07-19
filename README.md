@@ -218,6 +218,13 @@
 - **文档**: [docs/day29-jjwt.md](docs/day29-jjwt.md)
 - **状态**: ✅ 已完成
 
+### Day 30: Google Mug — Java 8 字符串处理与双向流工具库
+- **GitHub**: https://github.com/google/mug
+- **星标**: 700+（Google 内部使用量大，开源社区偏小众）
+- **版本**: 10.6（Java 8+ 兼容，0 依赖）
+- **文档**: [docs/day30-mug.md](docs/day30-mug.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -485,6 +492,14 @@ java-tools-learning/
 │               ├── JjwtBasicDemo.java               # 基础：Token创建/解析/自定义Claims/过期处理
 │               ├── JjwtAdvancedDemo.java            # 进阶：RS256非对称加密/Refresh Token/安全工具/常见坑
 │               └── JjwtPracticalDemo.java           # 实战：用户认证系统/登录/拦截器/角色鉴权/黑名单/Spring Boot集成
+├── mug-demo/                       # Day 30: Google Mug Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/mug/
+│               ├── MugBasicDemo.java                 # 基础：BiStream(from/zip/mapKeys/filter/toMap/inverse)+Substring(between/split/repeatedly)
+│               ├── MugAdvancedDemo.java              # 进阶：StringFormat双向模板/MoreStreams.groupConsecutive/Optionals/BiStream flatMap/groupingBy/concat
+│               └── MugPracticalDemo.java             # 实战：配置解析/日志统计/Map流水线/模板渲染/Spring Boot集成
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -516,6 +531,7 @@ java-tools-learning/
     └── day28-jsoup.md
     └── day28-logback.md
     └── day29-jjwt.md
+    └── day30-mug.md
 ```
 
 ## 🚀 如何使用
