@@ -225,6 +225,13 @@
 - **文档**: [docs/day30-mug.md](docs/day30-mug.md)
 - **状态**: ✅ 已完成
 
+### Day 31: MyBatis — Java 持久层框架
+- **GitHub**: https://github.com/mybatis/mybatis-3
+- **星标**: 19k+
+- **版本**: 3.5.15（Java 8 兼容）
+- **文档**: [docs/day31-mybatis.md](docs/day31-mybatis.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -500,6 +507,27 @@ java-tools-learning/
 │               ├── MugBasicDemo.java                 # 基础：BiStream(from/zip/mapKeys/filter/toMap/inverse)+Substring(between/split/repeatedly)
 │               ├── MugAdvancedDemo.java              # 进阶：StringFormat双向模板/MoreStreams.groupConsecutive/Optionals/BiStream flatMap/groupingBy/concat
 │               └── MugPracticalDemo.java             # 实战：配置解析/日志统计/Map流水线/模板渲染/Spring Boot集成
+├── mybatis-demo/                   # Day 31: MyBatis Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           ├── java/com/example/mybatis/
+│           │   ├── User.java                          # 用户实体
+│           │   ├── Order.java                         # 订单实体
+│           │   ├── UserOrder.java                     # 用户订单关联视图
+│           │   ├── mapper/
+│           │   │   ├── UserMapper.java                # 注解式 Mapper（CRUD/Provider）
+│           │   │   ├── UserSqlProvider.java           # 动态 SQL 构建器
+│           │   │   └── OrderMapper.java               # XML 映射 Mapper（关联/动态SQL）
+│           │   ├── MyBatisBasicDemo.java              # 基础：SqlSession/CRUD/注解Mapper/自增ID/批量插入
+│           │   ├── MyBatisAdvancedDemo.java           # 进阶：ResultMap/association/collection/动态SQL/批量
+│           │   └── MyBatisPracticalDemo.java          # 实战：事务/BATCH执行器/一级缓存/Spring Boot集成
+│           └── resources/
+│               ├── mybatis-config.xml                # MyBatis 全局配置
+│               ├── db-init.sql                       # H2 数据库初始化脚本
+│               ├── mapper/
+│               │   └── OrderMapper.xml               # XML 映射文件（动态SQL/关联查询）
+│               └── logback.xml                       # 日志配置
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -532,6 +560,7 @@ java-tools-learning/
     └── day28-logback.md
     └── day29-jjwt.md
     └── day30-mug.md
+    └── day31-mybatis.md
 ```
 
 ## 🚀 如何使用

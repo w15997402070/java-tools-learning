@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Logback 配置文件说明
+
+    配置加载顺序（Logback 自动查找，按优先级）：
+    1. classpath:logback-test.xml  （测试环境，优先加载）
+    2. classpath:logback.xml        （生产环境）
+    3. 通过系统属性 -Dlogback.configurationFile=xxx 指定
+
+    核心概念：
+    - appender：日志输出目的地（控制台/文件/网络/数据库）
+    - logger：日志记录器，绑定到具体类/包
+    - root：根 Logger，所有 Logger 的祖先，兜底配置
+    - encoder：格式化日志内容（Pattern/JSON）
+    - rollingPolicy：文件滚动策略（按时间/大小）
+
+    常用 Pattern 占位符：
+    %d{yyyy-MM-dd HH:mm:ss.SSS}   日期时间
+    %-5level                       日志级别（左对齐，5 字符宽）
+    %thread                        线程名
+    %logger{36}                    Logger 名（最多 36 字符）
+    %msg                           日志消息
+    %n                             换行
+    %X{traceId}                    MDC 中的 traceId
+    %X{userId}                     MDC 中的 userId
+    %highlight()                   控制台颜色（仅支持 ANSI 终端）
+-->
+<configuration scan="true" scanPeriod="60 seconds">
+
+    <!-- ==================== 全局属性 ==================== -->
+    <!-- 日志文件存储路径 -->
+    <property name="LOG_HOME" value="logs" />
+    <!-- 日志文件命名 -->
+    <property name="APP_NAME" value="logback-demo" />
+
+    <!-- ==================== Appender 定义 ==================== -->
+
+    <!-- 1. 控制台输出（带颜色高亮，便于开发调试） -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- highlight 自动为不同级别着色（需要 ANSI 终端支持） -->
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) [%thread] %cyan(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 2. 文件输出（普通文本格式，生产环境归档用） -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${APP_NAME}.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} [%X{traceId}] - %msg%n</pattern>
+        </encoder>
+        <!-- 滚动策略：每天生成一个文件，最多保留 30 天 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/${APP_NAME}-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 3. JSON 格式输出（供 ELK / Splunk 等日志中心采集） -->
+    <appender name="JSON_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${APP_NAME}-json.log</file>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <!-- 自定义字段名 -->
+            <customFields>{"app":"logback-demo","env":"dev"}</customFields>
+            <!-- 包含 MDC 中的字段 -->
+            <includeMdcKeyName>traceId</includeMdcKeyName>
+            <includeMdcKeyName>spanId</includeMdcKeyName>
+            <includeMdcKeyName>userId</includeMdcKeyName>
+            <includeMdcKeyName>requestUri</includeMdcKeyName>
+            <includeMdcKeyName>method</includeMdcKeyName>
+        </encoder>
+        <!-- 按时间和大小双重滚动 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/${APP_NAME}-json-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>50MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 4. 错误日志单独输出 -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${APP_NAME}-error.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} [%X{traceId}] - %msg%n</pattern>
+        </encoder>
+        <!-- 过滤器：只接受 ERROR 级别 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/${APP_NAME}-error-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 5. 异步 Appender（包装 FILE，不阻塞业务线程） -->
+    <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="FILE" />
+        <!-- 队列大小：建议 512~1024 -->
+        <queueSize>512</queueSize>
+        <!-- 队列满时不丢弃任何日志 -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- 队列满时不阻塞调用线程（生产建议 false） -->
+        <neverBlock>false</neverBlock>
+        <!-- 是否包含调用方数据（开销较高，生产建议 false） -->
+        <includeCallerData>false</includeCallerData>
+    </appender>
+
+    <!-- ==================== Logger 配置 ==================== -->
+
+    <!-- 业务日志：INFO 以上输出到文件 -->
+    <logger name="com.example.logback" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="ASYNC_FILE" />
+        <appender-ref ref="JSON_FILE" />
+        <appender-ref ref="ERROR_FILE" />
+    </logger>
+
+    <!-- 第三方库日志降噪 -->
+    <logger name="org.apache" level="WARN" />
+    <logger name="org.springframework" level="WARN" />
+    <logger name="com.zaxxer.hikari" level="WARN" />
+
+    <!-- ==================== 根 Logger ==================== -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+</configuration>

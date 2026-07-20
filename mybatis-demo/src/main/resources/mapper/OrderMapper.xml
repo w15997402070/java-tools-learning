@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatis.mapper.OrderMapper">
+
+    <!-- 结果映射：订单 + 用户关联（一对一） -->
+    <resultMap id="orderWithUserMap" type="com.example.mybatis.Order">
+        <id property="id" column="order_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="orderNo" column="order_no"/>
+        <result property="amount" column="amount"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="create_time"/>
+        <!-- 关联映射：association 实现一对一 -->
+        <association property="user" javaType="com.example.mybatis.User">
+            <id property="id" column="user_id"/>
+            <result property="username" column="username"/>
+            <result property="email" column="email"/>
+            <result property="age" column="age"/>
+            <result property="city" column="city"/>
+        </association>
+    </resultMap>
+
+    <!-- 结果映射：用户订单视图（一对多） -->
+    <resultMap id="userOrderMap" type="com.example.mybatis.UserOrder">
+        <id property="userId" column="user_id"/>
+        <result property="username" column="username"/>
+        <result property="email" column="email"/>
+        <!-- 集合映射：collection 实现一对多 -->
+        <collection property="orders" ofType="com.example.mybatis.Order">
+            <id property="id" column="order_id"/>
+            <result property="orderNo" column="order_no"/>
+            <result property="amount" column="amount"/>
+            <result property="status" column="status"/>
+            <result property="createTime" column="create_time"/>
+        </collection>
+    </resultMap>
+
+    <!-- 根据ID查询订单（含用户信息） -->
+    <select id="selectById" resultMap="orderWithUserMap">
+        SELECT
+            o.id AS order_id,
+            o.user_id,
+            o.order_no,
+            o.amount,
+            o.status,
+            o.create_time,
+            u.username,
+            u.email,
+            u.age,
+            u.city
+        FROM orders o
+        LEFT JOIN users u ON o.user_id = u.id
+        WHERE o.id = #{id}
+    </select>
+
+    <!-- 查询所有订单（含用户信息） -->
+    <select id="selectAllWithUser" resultMap="orderWithUserMap">
+        SELECT
+            o.id AS order_id,
+            o.user_id,
+            o.order_no,
+            o.amount,
+            o.status,
+            o.create_time,
+            u.username,
+            u.email,
+            u.age,
+            u.city
+        FROM orders o
+        LEFT JOIN users u ON o.user_id = u.id
+        ORDER BY o.id
+    </select>
+
+    <!-- 根据用户ID查询订单 -->
+    <select id="selectByUserId" resultType="com.example.mybatis.Order">
+        SELECT id, user_id, order_no, amount, status, create_time
+        FROM orders
+        WHERE user_id = #{userId}
+        ORDER BY create_time DESC
+    </select>
+
+    <!-- 查询用户及其订单列表（一对多） -->
+    <select id="selectUserOrders" resultMap="userOrderMap">
+        SELECT
+            u.id AS user_id,
+            u.username,
+            u.email,
+            o.id AS order_id,
+            o.order_no,
+            o.amount,
+            o.status,
+            o.create_time
+        FROM users u
+        LEFT JOIN orders o ON u.id = o.user_id
+        ORDER BY u.id, o.id
+    </select>
+
+    <!-- 动态条件查询（where + if） -->
+    <select id="selectByCondition" resultMap="orderWithUserMap">
+        SELECT
+            o.id AS order_id,
+            o.user_id,
+            o.order_no,
+            o.amount,
+            o.status,
+            o.create_time,
+            u.username,
+            u.email,
+            u.age,
+            u.city
+        FROM orders o
+        LEFT JOIN users u ON o.user_id = u.id
+        <where>
+            <if test="userId != null">
+                AND o.user_id = #{userId}
+            </if>
+            <if test="status != null and status != ''">
+                AND o.status = #{status}
+            </if>
+            <if test="minAmount != null">
+                AND o.amount >= #{minAmount}
+            </if>
+        </where>
+        ORDER BY o.create_time DESC
+    </select>
+
+    <!-- 动态更新（set + if） -->
+    <update id="updateDynamic">
+        UPDATE orders
+        <set>
+            <if test="orderNo != null and orderNo != ''">order_no = #{orderNo},</if>
+            <if test="amount != null">amount = #{amount},</if>
+            <if test="status != null and status != ''">status = #{status},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 批量插入（foreach） -->
+    <insert id="batchInsert">
+        INSERT INTO orders (user_id, order_no, amount, status, create_time)
+        VALUES
+        <foreach collection="orders" item="order" separator="," index="i">
+            (#{order.userId}, #{order.orderNo}, #{order.amount}, #{order.status}, #{order.createTime})
+        </foreach>
+    </insert>
+
+    <!-- 根据状态列表查询（IN查询） -->
+    <select id="selectByStatusList" resultMap="orderWithUserMap">
+        SELECT
+            o.id AS order_id,
+            o.user_id,
+            o.order_no,
+            o.amount,
+            o.status,
+            o.create_time,
+            u.username,
+            u.email,
+            u.age,
+            u.city
+        FROM orders o
+        LEFT JOIN users u ON o.user_id = u.id
+        WHERE o.status IN
+        <foreach collection="statusList" item="status" open="(" separator="," close=")">
+            #{status}
+        </foreach>
+        ORDER BY o.id
+    </select>
+
+</mapper>
