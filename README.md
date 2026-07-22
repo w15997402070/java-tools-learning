@@ -232,6 +232,14 @@
 - **文档**: [docs/day31-mybatis.md](docs/day31-mybatis.md)
 - **状态**: ✅ 已完成
 
+### Day 32: Redisson — 高性能 Redis Java 客户端
+- **GitHub**: https://github.com/redisson/redisson
+- **官网**: https://redisson.org
+- **星标**: 22k+
+- **版本**: 3.23.5（Java 8 兼容）
+- **文档**: [docs/day32-redisson.md](docs/day32-redisson.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -528,6 +536,14 @@ java-tools-learning/
 │               ├── mapper/
 │               │   └── OrderMapper.xml               # XML 映射文件（动态SQL/关联查询）
 │               └── logback.xml                       # 日志配置
+├── redisson-demo/                  # Day 32: Redisson Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/redisson/
+│               ├── RedissonBasicDemo.java             # 基础：RBucket/RMap/RSet/RList/RAtomicLong
+│               ├── RedissonAdvancedDemo.java          # 进阶：分布式锁/限流/队列/发布订阅/布隆过滤器
+│               └── RedissonPracticalDemo.java         # 实战：秒杀库存/分布式计数器/延迟队列/Spring集成
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -561,6 +577,7 @@ java-tools-learning/
     └── day29-jjwt.md
     └── day30-mug.md
     └── day31-mybatis.md
+    └── day32-redisson.md
 ```
 
 ## 🚀 如何使用
