@@ -1,0 +1,3 @@
+Apache Tika 是一个开源的文档内容分析工具包。
+它可以从 PDF、Word、Excel、PowerPoint、HTML、图片等多种文件中提取文本和元数据。
+本文件用于演示 Tika 对纯文本文件的内容提取能力。

@@ -240,6 +240,14 @@
 - **文档**: [docs/day32-redisson.md](docs/day32-redisson.md)
 - **状态**: ✅ 已完成
 
+### Day 33: Apache Tika — 文档内容提取与元数据分析库
+- **GitHub**: https://github.com/apache/tika
+- **官网**: https://tika.apache.org
+- **星标**: 2.3k+（Apache 官方项目，广泛应用于搜索引擎与内容管理）
+- **版本**: 2.9.1（Java 8 兼容）
+- **文档**: [docs/day33-tika.md](docs/day33-tika.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -544,6 +552,15 @@ java-tools-learning/
 │               ├── RedissonBasicDemo.java             # 基础：RBucket/RMap/RSet/RList/RAtomicLong
 │               ├── RedissonAdvancedDemo.java          # 进阶：分布式锁/限流/队列/发布订阅/布隆过滤器
 │               └── RedissonPracticalDemo.java         # 实战：秒杀库存/分布式计数器/延迟队列/Spring集成
+├── tika-demo/                      # Day 33: Apache Tika Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           ├── java/com/example/tika/
+│           │   ├── TikaBasicDemo.java                 # 基础：MIME检测/文本提取/元数据读取
+│           │   ├── TikaAdvancedDemo.java              # 进阶：Excel/PDF生成解析/结构化XHTML/语言检测
+│           │   └── TikaPracticalDemo.java             # 实战：批量索引/文件统计/敏感词扫描/Spring集成
+│           └── resources/sample/                     # 示例文档（txt/html/csv）
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -578,6 +595,7 @@ java-tools-learning/
     └── day30-mug.md
     └── day31-mybatis.md
     └── day32-redisson.md
+    └── day33-tika.md
 ```
 
 ## 🚀 如何使用
