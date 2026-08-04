@@ -248,6 +248,14 @@
 - **文档**: [docs/day33-tika.md](docs/day33-tika.md)
 - **状态**: ✅ 已完成
 
+### Day 34: Alibaba Druid — 高性能 JDBC 连接池
+- **GitHub**: https://github.com/alibaba/druid
+- **官网**: https://github.com/alibaba/druid/wiki
+- **星标**: 28k+（Java 后端最常用的连接池之一，中文社区与阿里系项目应用极广）
+- **版本**: 1.2.24（Java 8 兼容；2.0+ 需要 Java 11+）
+- **文档**: [docs/day34-druid.md](docs/day34-druid.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -561,6 +569,14 @@ java-tools-learning/
 │           │   ├── TikaAdvancedDemo.java              # 进阶：Excel/PDF生成解析/结构化XHTML/语言检测
 │           │   └── TikaPracticalDemo.java             # 实战：批量索引/文件统计/敏感词扫描/Spring集成
 │           └── resources/sample/                     # 示例文档（txt/html/csv）
+├── druid-demo/                     # Day 34: Alibaba Druid Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/druid/
+│               ├── DruidBasicDemo.java               # 基础：工厂/Setter/连接池参数/StatFilter
+│               ├── DruidAdvancedDemo.java            # 进阶：慢SQL/WallFilter/密码加密/自定义Filter/泄漏检测
+│               └── DruidPracticalDemo.java           # 实战：多数据源/MyBatis/Spring Boot集成/Web监控
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -596,6 +612,7 @@ java-tools-learning/
     └── day31-mybatis.md
     └── day32-redisson.md
     └── day33-tika.md
+    └── day34-druid.md
 ```
 
 ## 🚀 如何使用
