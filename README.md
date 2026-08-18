@@ -256,6 +256,14 @@
 - **文档**: [docs/day34-druid.md](docs/day34-druid.md)
 - **状态**: ✅ 已完成
 
+### Day 35: XXL-Job — 分布式任务调度平台
+- **GitHub**: https://github.com/xuxueli/xxl-job
+- **官网文档**: https://www.xuxueli.cn/xxl-job/
+- **星标**: 27k+（调度中心+执行器架构，开箱即用 Web 控制台，国内后端团队最常用调度方案）
+- **版本**: 2.4.0（Java 8 兼容；3.0+ 需 Java 11+）
+- **文档**: [docs/day35-xxl-job.md](docs/day35-xxl-job.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -577,6 +585,14 @@ java-tools-learning/
 │               ├── DruidBasicDemo.java               # 基础：工厂/Setter/连接池参数/StatFilter
 │               ├── DruidAdvancedDemo.java            # 进阶：慢SQL/WallFilter/密码加密/自定义Filter/泄漏检测
 │               └── DruidPracticalDemo.java           # 实战：多数据源/MyBatis/Spring Boot集成/Web监控
+├── xxl-job-demo/                   # Day 35: XXL-Job Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/xxljob/
+│               ├── XxlJobBasicDemo.java              # 基础：@XxlJob注解/参数传递/执行日志/结果标记
+│               ├── XxlJobAdvancedDemo.java           # 进阶：分片广播/父子任务链/GLUE模式/路由策略
+│               └── XxlJobPracticalDemo.java          # 实战：订单超时取消/每日报表/日志清理/健康检查/Spring Boot集成
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -613,6 +629,7 @@ java-tools-learning/
     └── day32-redisson.md
     └── day33-tika.md
     └── day34-druid.md
+    └── day35-xxl-job.md
 ```
 
 ## 🚀 如何使用
