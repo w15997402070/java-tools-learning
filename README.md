@@ -264,6 +264,14 @@
 - **文档**: [docs/day35-xxl-job.md](docs/day35-xxl-job.md)
 - **状态**: ✅ 已完成
 
+### Day 36: Apache Commons Compress — 多种压缩格式统一处理库
+- **GitHub**: https://github.com/apache/commons-compress
+- **官网文档**: https://commons.apache.org/proper/commons-compress/
+- **星标**: 700+（Apache 官方项目，支持 ZIP/TAR/7Z/GZIP/BZIP2/XZ/LZ4/Zstd 等几乎所有主流格式）
+- **版本**: 1.26.0（Java 8 兼容）
+- **文档**: [docs/day36-commons-compress.md](docs/day36-commons-compress.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -593,6 +601,14 @@ java-tools-learning/
 │               ├── XxlJobBasicDemo.java              # 基础：@XxlJob注解/参数传递/执行日志/结果标记
 │               ├── XxlJobAdvancedDemo.java           # 进阶：分片广播/父子任务链/GLUE模式/路由策略
 │               └── XxlJobPracticalDemo.java          # 实战：订单超时取消/每日报表/日志清理/健康检查/Spring Boot集成
+├── commons-compress-demo/          # Day 36: Apache Commons Compress Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/compress/
+│               ├── CompressBasicDemo.java            # 基础：ZIP/GZIP/TAR 创建与解压
+│               ├── CompressAdvancedDemo.java         # 进阶：7Z/BZIP2/XZ/自动格式检测/内存中操作
+│               └── CompressPracticalDemo.java        # 实战：目录递归归档/批量解压/内容预览/流式大文件/完整性校验
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -630,6 +646,7 @@ java-tools-learning/
     └── day33-tika.md
     └── day34-druid.md
     └── day35-xxl-job.md
+    └── day36-commons-compress.md
 ```
 
 ## 🚀 如何使用

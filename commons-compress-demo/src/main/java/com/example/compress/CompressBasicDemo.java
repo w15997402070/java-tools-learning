@@ -1,0 +1,236 @@
+package com.example.compress;
+
+import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
+import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
+import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
+import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
+import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
+import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
+import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
+import org.apache.commons.compress.compressors.gzip.GzipCompressorOutputStream;
+import org.apache.commons.compress.compressors.gzip.GzipParameters;
+import org.apache.commons.compress.utils.IOUtils;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
+
+/**
+ * CompressBasicDemo — Apache Commons Compress 基础演示
+ *
+ * 覆盖核心功能：
+ * 1. ZIP 格式：创建压缩包、添加文件、解压读取
+ * 2. GZIP 格式：单文件压缩/解压、自定义参数（文件名/修改时间/压缩级别）
+ * 3. TAR 格式：Unix 归档创建、目录结构保留、解压提取
+ *
+ * @author java-tools-learning
+ */
+public class CompressBasicDemo {
+
+    // 演示输出目录
+    private static final String DEMO_DIR = "compress-demo-output";
+
+    public static void main(String[] args) throws Exception {
+        // 创建输出目录
+        Files.createDirectories(Paths.get(DEMO_DIR));
+
+        System.out.println("===== Apache Commons Compress 基础演示 =====\n");
+
+        // 1. ZIP 基础操作
+        demoZipBasic();
+
+        // 2. GZIP 基础操作
+        demoGzipBasic();
+
+        // 3. TAR 基础操作
+        demoTarBasic();
+
+        System.out.println("\n===== 所有基础演示完成，输出目录: " + DEMO_DIR + " =====");
+    }
+
+    /**
+     * 演示1: ZIP 格式 — 创建压缩包与解压读取
+     */
+    private static void demoZipBasic() throws IOException {
+        System.out.println("--- ZIP 基础操作 ---");
+
+        String zipFile = DEMO_DIR + "/demo-basic.zip";
+        String[] fileNames = {"hello.txt", "readme.txt", "data/info.csv"};
+        String[] contents = {
+            "Hello, Apache Commons Compress!",
+            "This is a basic ZIP demo.",
+            "id,name,age\n1,Alice,30\n2,Bob,25"
+        };
+
+        // 1.1 创建 ZIP 文件（支持多级目录）
+        try (ZipArchiveOutputStream zos = new ZipArchiveOutputStream(new FileOutputStream(zipFile))) {
+            zos.setEncoding("UTF-8"); // 支持中文文件名
+
+            for (int i = 0; i < fileNames.length; i++) {
+                // 创建条目（支持带路径的文件名）
+                ZipArchiveEntry entry = new ZipArchiveEntry(fileNames[i]);
+                entry.setSize(contents[i].getBytes(StandardCharsets.UTF_8).length);
+                entry.setTime(System.currentTimeMillis());
+
+                zos.putArchiveEntry(entry);
+                zos.write(contents[i].getBytes(StandardCharsets.UTF_8));
+                zos.closeArchiveEntry();
+
+                System.out.println("  添加条目: " + fileNames[i] + " (" + entry.getSize() + " bytes)");
+            }
+        }
+        System.out.println("  ZIP 创建完成: " + zipFile);
+
+        // 1.2 读取 ZIP 文件内容
+        System.out.println("  ZIP 内容列表:");
+        try (ZipArchiveInputStream zis = new ZipArchiveInputStream(new FileInputStream(zipFile), "UTF-8")) {
+            ZipArchiveEntry entry;
+            while ((entry = zis.getNextZipEntry()) != null) {
+                System.out.println("    - " + entry.getName()
+                    + " | 大小: " + entry.getSize()
+                    + " | 压缩后: " + entry.getCompressedSize());
+            }
+        }
+
+        // 1.3 解压指定条目到内存
+        System.out.println("  解压并读取 hello.txt 内容:");
+        try (ZipArchiveInputStream zis = new ZipArchiveInputStream(new FileInputStream(zipFile), "UTF-8")) {
+            ZipArchiveEntry entry;
+            while ((entry = zis.getNextZipEntry()) != null) {
+                if ("hello.txt".equals(entry.getName())) {
+                    byte[] buf = new byte[(int) entry.getSize()];
+                    IOUtils.readFully(zis, buf);
+                    System.out.println("    内容: " + new String(buf, StandardCharsets.UTF_8));
+                    break;
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    /**
+     * 演示2: GZIP 格式 — 单文件压缩与解压
+     */
+    private static void demoGzipBasic() throws IOException {
+        System.out.println("--- GZIP 基础操作 ---");
+
+        String sourceFile = DEMO_DIR + "/source-gzip.txt";
+        String gzipFile = DEMO_DIR + "/source-gzip.txt.gz";
+        String decompressedFile = DEMO_DIR + "/source-gzip-decompressed.txt";
+
+        // 准备源文件
+        String content = "Apache Commons Compress 支持 GZIP 格式压缩与解压。\n"
+            + "GZIP 基于 DEFLATE 算法，适合单文件压缩。\n"
+            + "常用于 HTTP 传输压缩、日志归档等场景。";
+        Files.write(Paths.get(sourceFile), content.getBytes(StandardCharsets.UTF_8));
+        System.out.println("  源文件大小: " + Files.size(Paths.get(sourceFile)) + " bytes");
+
+        // 2.1 带自定义参数的 GZIP 压缩
+        GzipParameters params = new GzipParameters();
+        params.setFilename("source-gzip.txt");       // 记录原始文件名
+        params.setComment("Generated by Commons Compress Demo");
+        params.setModificationTime(System.currentTimeMillis());
+        params.setCompressionLevel(6);               // 默认压缩级别（1=最快，9=最小）
+
+        try (GzipCompressorOutputStream gzos = new GzipCompressorOutputStream(
+                new FileOutputStream(gzipFile), params);
+             FileInputStream fis = new FileInputStream(sourceFile)) {
+            IOUtils.copy(fis, gzos);
+        }
+        System.out.println("  GZIP 压缩后: " + Files.size(Paths.get(gzipFile)) + " bytes");
+
+        // 2.2 GZIP 解压并读取元数据
+        try (GzipCompressorInputStream gzis = new GzipCompressorInputStream(
+                new FileInputStream(gzipFile));
+             FileOutputStream fos = new FileOutputStream(decompressedFile)) {
+
+            // 读取 GZIP 头部元数据
+            System.out.println("  GZIP 元数据:");
+            System.out.println("    原始文件名: " + gzis.getMetaData().getFilename());
+            System.out.println("    注释: " + gzis.getMetaData().getComment());
+
+            // 解压写入文件
+            IOUtils.copy(gzis, fos);
+        }
+        System.out.println("  解压后文件: " + decompressedFile);
+
+        // 验证内容一致性
+        String decompressed = new String(Files.readAllBytes(Paths.get(decompressedFile)), StandardCharsets.UTF_8);
+        System.out.println("  内容验证: " + (content.equals(decompressed) ? "通过" : "失败"));
+        System.out.println();
+    }
+
+    /**
+     * 演示3: TAR 格式 — Unix 归档创建与提取
+     */
+    private static void demoTarBasic() throws IOException {
+        System.out.println("--- TAR 基础操作 ---");
+
+        String tarFile = DEMO_DIR + "/demo-basic.tar";
+        String extractDir = DEMO_DIR + "/tar-extract";
+
+        // 3.1 创建 TAR 归档（保留目录结构）
+        try (TarArchiveOutputStream tos = new TarArchiveOutputStream(
+                new FileOutputStream(tarFile))) {
+            tos.setLongFileMode(TarArchiveOutputStream.LONGFILE_GNU); // 支持长文件名
+
+            // 添加普通文件
+            addTarEntry(tos, "docs/readme.txt", "TAR 是 Unix/Linux 系统标准的归档格式。".getBytes(StandardCharsets.UTF_8));
+            addTarEntry(tos, "docs/license.txt", "Apache License 2.0".getBytes(StandardCharsets.UTF_8));
+
+            // 添加目录条目（TAR 需要显式创建目录条目）
+            TarArchiveEntry dirEntry = new TarArchiveEntry("logs/");
+            dirEntry.setMode(0755); // Unix 权限 rwxr-xr-x
+            tos.putArchiveEntry(dirEntry);
+            tos.closeArchiveEntry();
+
+            addTarEntry(tos, "logs/app.log", "2024-01-15 INFO Application started.\n2024-01-15 DEBUG Connected to DB.".getBytes(StandardCharsets.UTF_8));
+
+            System.out.println("  TAR 归档创建完成: " + tarFile);
+        }
+
+        // 3.2 列出 TAR 内容
+        System.out.println("  TAR 内容列表:");
+        try (TarArchiveInputStream tis = new TarArchiveInputStream(new FileInputStream(tarFile))) {
+            TarArchiveEntry entry;
+            while ((entry = tis.getNextTarEntry()) != null) {
+                String type = entry.isDirectory() ? "[DIR] " : "[FILE]";
+                String perm = String.format("%04o", entry.getMode() & 0777);
+                System.out.println("    " + type + " " + entry.getName()
+                    + " | 大小: " + entry.getSize()
+                    + " | 权限: " + perm);
+            }
+        }
+
+        // 3.3 解压 TAR 到目录
+        Files.createDirectories(Paths.get(extractDir));
+        try (TarArchiveInputStream tis = new TarArchiveInputStream(new FileInputStream(tarFile))) {
+            TarArchiveEntry entry;
+            while ((entry = tis.getNextTarEntry()) != null) {
+                File outFile = new File(extractDir, entry.getName());
+                if (entry.isDirectory()) {
+                    outFile.mkdirs();
+                } else {
+                    outFile.getParentFile().mkdirs();
+                    try (FileOutputStream fos = new FileOutputStream(outFile)) {
+                        IOUtils.copy(tis, fos);
+                    }
+                }
+            }
+        }
+        System.out.println("  解压到目录: " + extractDir);
+        System.out.println();
+    }
+
+    /**
+     * 辅助方法：向 TAR 中添加文件条目
+     */
+    private static void addTarEntry(TarArchiveOutputStream tos, String name, byte[] data) throws IOException {
+        TarArchiveEntry entry = new TarArchiveEntry(name);
+        entry.setSize(data.length);
+        entry.setMode(0644); // rw-r--r--
+        tos.putArchiveEntry(entry);
+        tos.write(data);
+        tos.closeArchiveEntry();
+    }
+}
