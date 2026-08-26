@@ -272,6 +272,14 @@
 - **文档**: [docs/day36-commons-compress.md](docs/day36-commons-compress.md)
 - **状态**: ✅ 已完成
 
+### Day 37: Apache Commons Collections4 — Java 集合框架增强库
+- **GitHub**: https://github.com/apache/commons-collections
+- **官网文档**: https://commons.apache.org/proper/commons-collections/
+- **星标**: 4.1k+（Apache 官方项目，历史悠久，使用量极大）
+- **版本**: 4.4（Java 8 兼容）
+- **文档**: [docs/day37-commons-collections4.md](docs/day37-commons-collections4.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -609,6 +617,14 @@ java-tools-learning/
 │               ├── CompressBasicDemo.java            # 基础：ZIP/GZIP/TAR 创建与解压
 │               ├── CompressAdvancedDemo.java         # 进阶：7Z/BZIP2/XZ/自动格式检测/内存中操作
 │               └── CompressPracticalDemo.java        # 实战：目录递归归档/批量解压/内容预览/流式大文件/完整性校验
+├── commons-collections4-demo/      # Day 37: Apache Commons Collections4 Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/commonscollections4/
+│               ├── CommonsCollections4BasicDemo.java     # 基础：Bag/BidiMap/CaseInsensitiveMap/MultiValuedMap/LinkedMap/PassiveExpiringMap
+│               ├── CommonsCollections4AdvancedDemo.java  # 进阶：CollectionUtils/ListUtils/MapUtils/SetUtils/IterableUtils/ComparatorUtils
+│               └── CommonsCollections4PracticalDemo.java # 实战：权限/销量统计/浏览历史/Header/限流/短码/配置合并/工作流
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -647,6 +663,7 @@ java-tools-learning/
     └── day34-druid.md
     └── day35-xxl-job.md
     └── day36-commons-compress.md
+    └── day37-commons-collections4.md
 ```
 
 ## 🚀 如何使用

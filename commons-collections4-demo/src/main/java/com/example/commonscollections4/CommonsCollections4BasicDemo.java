@@ -5,15 +5,14 @@ import org.apache.commons.collections4.BidiMap;
 import org.apache.commons.collections4.MultiSet;
 import org.apache.commons.collections4.MultiValuedMap;
 import org.apache.commons.collections4.OrderedMap;
-import org.apache.commons.collections4.PassiveExpiringMap;
-import org.apache.commons.collections4.SetUniqueList;
 import org.apache.commons.collections4.bag.HashBag;
 import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 import org.apache.commons.collections4.bidimap.TreeBidiMap;
 import org.apache.commons.collections4.list.SetUniqueList;
 import org.apache.commons.collections4.map.CaseInsensitiveMap;
 import org.apache.commons.collections4.map.LinkedMap;
-import org.apache.commons.collections4.map.MultiValueMap;
+import org.apache.commons.collections4.map.PassiveExpiringMap;
+import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
 import org.apache.commons.collections4.multiset.HashMultiSet;
 
 import java.util.ArrayList;
@@ -194,7 +193,7 @@ public class CommonsCollections4BasicDemo {
         System.out.println("--- 5. MultiValuedMap：一键多值Map ---");
 
         // MultiValuedMap（4.1+推荐）
-        MultiValuedMap<String, String> studentCourses = MultiValueMap.multiValueMap(new HashMap<>(), ArrayList.class);
+        MultiValuedMap<String, String> studentCourses = new ArrayListValuedHashMap<>();
         studentCourses.put("张三", "数学");
         studentCourses.put("张三", "英语");
         studentCourses.put("张三", "物理");
