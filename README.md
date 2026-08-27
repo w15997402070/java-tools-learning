@@ -280,6 +280,14 @@
 - **文档**: [docs/day37-commons-collections4.md](docs/day37-commons-collections4.md)
 - **状态**: ✅ 已完成
 
+### Day 38: AssertJ — 流畅断言库
+- **GitHub**: https://github.com/assertj/assertj
+- **官网文档**: https://assertj.github.io/doc/
+- **星标**: 3k+（JUnit/Spring Boot 生态事实标准）
+- **版本**: 3.24.2（Java 8 兼容）
+- **文档**: [docs/day38-assertj.md](docs/day38-assertj.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -625,6 +633,14 @@ java-tools-learning/
 │               ├── CommonsCollections4BasicDemo.java     # 基础：Bag/BidiMap/CaseInsensitiveMap/MultiValuedMap/LinkedMap/PassiveExpiringMap
 │               ├── CommonsCollections4AdvancedDemo.java  # 进阶：CollectionUtils/ListUtils/MapUtils/SetUtils/IterableUtils/ComparatorUtils
 │               └── CommonsCollections4PracticalDemo.java # 实战：权限/销量统计/浏览历史/Header/限流/短码/配置合并/工作流
+├── assertj-demo/                   # Day 38: AssertJ Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/assertj/
+│               ├── AssertJBasicDemo.java              # 基础：字符串/数值/布尔/数组/集合/Map/文件断言
+│               ├── AssertJAdvancedDemo.java           # 进阶：异常/Optional/日期时间/递归比较/软断言
+│               └── AssertJPracticalDemo.java          # 实战：响应体验证/自定义Condition/集合投影/Spring Boot集成
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -664,6 +680,7 @@ java-tools-learning/
     └── day35-xxl-job.md
     └── day36-commons-compress.md
     └── day37-commons-collections4.md
+    └── day38-assertj.md
 ```
 
 ## 🚀 如何使用
