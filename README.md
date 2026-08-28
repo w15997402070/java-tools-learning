@@ -288,6 +288,14 @@
 - **文档**: [docs/day38-assertj.md](docs/day38-assertj.md)
 - **状态**: ✅ 已完成
 
+### Day 39: Mockito — Java 单元测试模拟框架
+- **GitHub**: https://github.com/mockito/mockito
+- **官网文档**: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html
+- **星标**: 15k+（Java 单元测试事实标准，Spring Boot 官方测试栈核心组件）
+- **版本**: 4.11.0（Java 8 兼容；5.x 需要 Java 11+）
+- **文档**: [docs/day39-mockito.md](docs/day39-mockito.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -641,6 +649,20 @@ java-tools-learning/
 │               ├── AssertJBasicDemo.java              # 基础：字符串/数值/布尔/数组/集合/Map/文件断言
 │               ├── AssertJAdvancedDemo.java           # 进阶：异常/Optional/日期时间/递归比较/软断言
 │               └── AssertJPracticalDemo.java          # 实战：响应体验证/自定义Condition/集合投影/Spring Boot集成
+├── mockito-demo/                   # Day 39: Mockito Demo
+│   ├── pom.xml
+│   └── src/
+│       ├── main/
+│       │   ├── java/com/example/mockito/
+│       │   │   ├── domain/                          # 领域模型（Order/User/PaymentResult）
+│       │   │   ├── repository/OrderRepository.java  # 订单数据访问接口
+│       │   │   └── service/                         # 业务服务（OrderService/PaymentService/NotificationService）
+│       │   └── resources/
+│       └── test/
+│           └── java/com/example/mockito/
+│               ├── MockitoBasicDemo.java            # 基础：mock/when/verify/参数匹配器
+│               ├── MockitoAdvancedDemo.java         # 进阶：注解/Spy/ArgumentCaptor/BDD/InOrder
+│               └── MockitoPracticalDemo.java        # 实战：订单支付/取消/VIP折扣完整流程
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -681,6 +703,7 @@ java-tools-learning/
     └── day36-commons-compress.md
     └── day37-commons-collections4.md
     └── day38-assertj.md
+    └── day39-mockito.md
 ```
 
 ## 🚀 如何使用
