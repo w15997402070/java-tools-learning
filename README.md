@@ -296,6 +296,14 @@
 - **文档**: [docs/day39-mockito.md](docs/day39-mockito.md)
 - **状态**: ✅ 已完成
 
+### Day 40: Flyway — 数据库版本迁移框架
+- **GitHub**: https://github.com/flyway/flyway
+- **官网**: https://flywaydb.org
+- **星标**: 8k+（数据库迁移事实标准，Spring Boot 默认集成）
+- **版本**: 9.22.3（Java 8 兼容；10.x 需 Java 17+）
+- **文档**: [docs/day40-flyway.md](docs/day40-flyway.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -663,6 +671,21 @@ java-tools-learning/
 │               ├── MockitoBasicDemo.java            # 基础：mock/when/verify/参数匹配器
 │               ├── MockitoAdvancedDemo.java         # 进阶：注解/Spy/ArgumentCaptor/BDD/InOrder
 │               └── MockitoPracticalDemo.java        # 实战：订单支付/取消/VIP折扣完整流程
+├── flyway-demo/                    # Day 40: Flyway Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           ├── java/com/example/flyway/
+│           │   ├── FlywayBasicDemo.java             # 基础：配置/迁移/history表/幂等性
+│           │   ├── FlywayAdvancedDemo.java          # 进阶：validate/repair/baseline/Callback/配置
+│           │   └── FlywayPracticalDemo.java         # 实战：电商库版本升级/多表JOIN/Spring Boot集成
+│           └── resources/
+│               ├── db/migration/                    # 迁移脚本 V1~V4
+│               │   ├── V1__Create_user_table.sql
+│               │   ├── V2__Create_user_profile_table.sql
+│               │   ├── V3__Add_order_table.sql
+│               │   └── V4__Add_order_items_and_seed_data.sql
+│               └── logback.xml
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -704,6 +727,7 @@ java-tools-learning/
     └── day37-commons-collections4.md
     └── day38-assertj.md
     └── day39-mockito.md
+    └── day40-flyway.md
 ```
 
 ## 🚀 如何使用

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <!-- 减少 Flyway 的 INFO 日志输出，避免干扰演示输出 -->
+    <logger name="org.flywaydb" level="WARN"/>
+</configuration>
