@@ -304,6 +304,14 @@
 - **文档**: [docs/day40-flyway.md](docs/day40-flyway.md)
 - **状态**: ✅ 已完成
 
+### Day 41: Orika — Java Bean 映射框架
+- **GitHub**: https://github.com/orika-mapper/orika
+- **官网文档**: https://orika-mapper.github.io/orika-docs/
+- **星标**: 1.2k+（运行时字节码生成映射，与 MapStruct 互补）
+- **版本**: 1.5.4（Java 8 兼容；1.6+ 需 Java 11+）
+- **文档**: [docs/day41-orika.md](docs/day41-orika.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -686,6 +694,17 @@ java-tools-learning/
 │               │   ├── V3__Add_order_table.sql
 │               │   └── V4__Add_order_items_and_seed_data.sql
 │               └── logback.xml
+├── orika-demo/                     # Day 41: Orika Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           ├── java/com/example/orika/
+│           │   ├── entity/                          # 实体类（User/Order）
+│           │   ├── dto/                             # DTO类（UserDTO/OrderDTO/UserOrderDTO）
+│           │   ├── OrikaBasicDemo.java              # 基础：默认映射/字段别名/自定义转换/双向映射
+│           │   ├── OrikaAdvancedDemo.java           # 进阶：双向转换器/集合映射/上下文/自定义工厂
+│           │   └── OrikaPracticalDemo.java          # 实战：多源合并/性能对比/Spring Boot集成指南
+│           └── resources/
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -728,6 +747,7 @@ java-tools-learning/
     └── day38-assertj.md
     └── day39-mockito.md
     └── day40-flyway.md
+    └── day41-orika.md
 ```
 
 ## 🚀 如何使用
