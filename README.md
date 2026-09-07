@@ -312,6 +312,14 @@
 - **文档**: [docs/day41-orika.md](docs/day41-orika.md)
 - **状态**: ✅ 已完成
 
+### Day 42: Apache Commons CSV — Java CSV 读写事实标准库
+- **GitHub**: https://github.com/apache/commons-csv
+- **官网文档**: https://commons.apache.org/proper/commons-csv/
+- **星标**: 700+（Apache 官方，Java CSV 读写事实标准，0 依赖）
+- **版本**: 1.10.0（Java 8 兼容；1.11+ 需 Java 11+）
+- **文档**: [docs/day42-commons-csv.md](docs/day42-commons-csv.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -705,6 +713,16 @@ java-tools-learning/
 │           │   ├── OrikaAdvancedDemo.java           # 进阶：双向转换器/集合映射/上下文/自定义工厂
 │           │   └── OrikaPracticalDemo.java          # 实战：多源合并/性能对比/Spring Boot集成指南
 │           └── resources/
+├── commons-csv-demo/               # Day 42: Apache Commons CSV Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           ├── java/com/example/commonscsv/
+│           │   ├── CommonsCsvBasicDemo.java         # 基础：CSVFormat/CSVPrinter/CSVParser/RFC4180/按header与按列号
+│           │   ├── CommonsCsvAdvancedDemo.java      # 进阶：欧式分号/QuoteMode/BOM处理/注释/大文件流式/CSV→Map
+│           │   └── CommonsCsvPracticalDemo.java     # 实战：用户批量导入+错误报告/订单导出+Excel兼容/Spring风格上传
+│           └── resources/
+│               └── logback.xml
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -748,6 +766,7 @@ java-tools-learning/
     └── day39-mockito.md
     └── day40-flyway.md
     └── day41-orika.md
+    └── day42-commons-csv.md
 ```
 
 ## 🚀 如何使用
