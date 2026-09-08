@@ -320,6 +320,14 @@
 - **文档**: [docs/day42-commons-csv.md](docs/day42-commons-csv.md)
 - **状态**: ✅ 已完成
 
+### Day 43: Apache Commons Codec — Java 编码与摘要工具箱
+- **GitHub**: https://github.com/apache/commons-codec
+- **官网文档**: https://commons.apache.org/proper/commons-codec/
+- **星标**: 700+（Apache 官方项目，Java 生态中无处不在的底层依赖）
+- **版本**: 1.17.1（Java 8 兼容）
+- **文档**: [docs/day43-commons-codec.md](docs/day43-commons-codec.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -723,6 +731,14 @@ java-tools-learning/
 │           │   └── CommonsCsvPracticalDemo.java     # 实战：用户批量导入+错误报告/订单导出+Excel兼容/Spring风格上传
 │           └── resources/
 │               └── logback.xml
+├── commons-codec-demo/             # Day 43: Apache Commons Codec Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/commonscodec/
+│               ├── CommonsCodecBasicDemo.java       # 基础：Base64/Hex/URLCodec/MD5/SHA-256
+│               ├── CommonsCodecAdvancedDemo.java    # 进阶：HMAC/Base64流式/QuotedPrintable/Soundex
+│               └── CommonsCodecPracticalDemo.java   # 实战：文件校验和/密码摘要/API签名Token/Spring集成
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -767,6 +783,7 @@ java-tools-learning/
     └── day40-flyway.md
     └── day41-orika.md
     └── day42-commons-csv.md
+    └── day43-commons-codec.md
 ```
 
 ## 🚀 如何使用
