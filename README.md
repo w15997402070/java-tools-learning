@@ -328,6 +328,14 @@
 - **文档**: [docs/day43-commons-codec.md](docs/day43-commons-codec.md)
 - **状态**: ✅ 已完成
 
+### Day 44: Apache Commons Text — Java 文本处理工具箱
+- **GitHub**: https://github.com/apache/commons-text
+- **官网文档**: https://commons.apache.org/proper/commons-text/
+- **星标**: 700+（Apache 官方项目，Commons 系列重要成员）
+- **版本**: 1.11.0（Java 8 兼容）
+- **文档**: [docs/day44-commons-text.md](docs/day44-commons-text.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -739,6 +747,14 @@ java-tools-learning/
 │               ├── CommonsCodecBasicDemo.java       # 基础：Base64/Hex/URLCodec/MD5/SHA-256
 │               ├── CommonsCodecAdvancedDemo.java    # 进阶：HMAC/Base64流式/QuotedPrintable/Soundex
 │               └── CommonsCodecPracticalDemo.java   # 实战：文件校验和/密码摘要/API签名Token/Spring集成
+├── commons-text-demo/              # Day 44: Apache Commons Text Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           └── java/com/example/commonstext/
+│               ├── CommonsTextBasicDemo.java        # 基础：字符串相似度/CaseUtils/WordUtils
+│               ├── CommonsTextAdvancedDemo.java     # 进阶：转义/模板替换/随机字符串/TextStringBuilder
+│               └── CommonsTextPracticalDemo.java      # 实战：fuzzy match/脱敏/配置渲染/密码生成/搜索排序
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -784,6 +800,7 @@ java-tools-learning/
     └── day41-orika.md
     └── day42-commons-csv.md
     └── day43-commons-codec.md
+    └── day44-commons-text.md
 ```
 
 ## 🚀 如何使用
