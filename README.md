@@ -336,6 +336,14 @@
 - **文档**: [docs/day44-commons-text.md](docs/day44-commons-text.md)
 - **状态**: ✅ 已完成
 
+### Day 45: HikariCP — 高性能 JDBC 连接池
+- **GitHub**: https://github.com/brettwooldridge/HikariCP
+- **官网文档**: https://github.com/brettwooldridge/HikariCP/blob/dev/README.md
+- **星标**: 19k+（Spring Boot 默认连接池，连接池领域事实标准）
+- **版本**: 4.0.3（Java 8 兼容；5.x 需 Java 11+）
+- **文档**: [docs/day45-hikaricp.md](docs/day45-hikaricp.md)
+- **状态**: ✅ 已完成
+
 ---
 
 ## 🎯 学习目标
@@ -755,6 +763,16 @@ java-tools-learning/
 │               ├── CommonsTextBasicDemo.java        # 基础：字符串相似度/CaseUtils/WordUtils
 │               ├── CommonsTextAdvancedDemo.java     # 进阶：转义/模板替换/随机字符串/TextStringBuilder
 │               └── CommonsTextPracticalDemo.java      # 实战：fuzzy match/脱敏/配置渲染/密码生成/搜索排序
+├── hikaricp-demo/                  # Day 45: HikariCP Demo
+│   ├── pom.xml
+│   └── src/
+│       └── main/
+│           ├── java/com/example/hikaricp/
+│           │   ├── HikariCpBasicDemo.java           # 基础：连接池配置/获取连接/CRUD
+│           │   ├── HikariCpAdvancedDemo.java        # 进阶：泄漏检测/超时/JMX指标/自定义Metrics
+│           │   └── HikariCpPracticalDemo.java       # 实战：Spring Boot风格配置/多数据源/批量插入/重试
+│           └── resources/
+│               └── logback.xml                       # 日志配置
 └── docs/                           # 学习文档
     ├── day01-picocli.md
     ├── day02-gson.md
@@ -801,6 +819,7 @@ java-tools-learning/
     └── day42-commons-csv.md
     └── day43-commons-codec.md
     └── day44-commons-text.md
+    └── day45-hikaricp.md
 ```
 
 ## 🚀 如何使用
